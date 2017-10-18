@@ -1,0 +1,26 @@
+{
+  "minimum-stability": "dev",
+  "require": {
+    "php": "^7.0",
+    "fguillot/json-rpc": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "src\\": "src/",
+      "php\\": "php/",
+      "application\\": "application/"
+    }
+  },
+  "repositories": [
+    {
+      "packagist": false
+    },
+    {
+      "type": "composer",
+      "url": "http://packagist.org/"
+    }
+  ],
+  "config": {
+    "secure-http": false
+  }
+}
