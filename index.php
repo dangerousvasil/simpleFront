@@ -1,6 +1,6 @@
 <pre><?php
 
-var_dump($_SERVER);
+var_dump(exec('ifcponfig'));
 
 phpinfo();
 
