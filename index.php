@@ -11,8 +11,6 @@ if ($_GET['info'] ?? false) {
     var_dump($serviceHost);
 
     try {
-
-
         // 1. инициализация
         $ch = curl_init();
 
