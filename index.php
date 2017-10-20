@@ -1,7 +1,24 @@
-<pre><?php
+<?php
+require_once 'vendor/autoload.php';
 
-var_dump(exec('ifcponfig'));
+use JsonRPC\Client;
 
-phpinfo();
+if ($_GET['info'] ?? false) {
+    phpinfo();
+} else {
+    // here set up balanced nginx
+    $client = new Client('http://web:1080/');
+    $http = $client->getHttpClient()
+                   ->withDebug()
+                   ->withHeaders(['Host: service']);
 
-?></pre>
+    try {
+        $result = $client->execute('addition', [3, 5]);
+    } catch (Exception $e) {
+        // debug info is disgusting
+        var_dump($e);
+    }
+    var_dump($result);
+}
+
+
