@@ -13,21 +13,21 @@ if ($_GET['info'] ?? false) {
     try {
 
 
-        // 1. инициализация
+        // 1. РёРЅРёС†РёР°Р»РёР·Р°С†РёСЏ
         $ch = curl_init();
 
-        // 2. устанавливаем опции, включая урл
+        // 2. СѓСЃС‚Р°РЅР°РІР»РёРІР°РµРј РѕРїС†РёРё, РІРєР»СЋС‡Р°СЏ СѓСЂР»
         curl_setopt($ch, CURLOPT_URL, 'http://' . $serviceHost);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         curl_setopt($ch, CURLOPT_HEADER, 1);
 
         $header[] = "Host: service";
         @curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
-        // 3. выполнение запроса и получение ответа
+        // 3. РІС‹РїРѕР»РЅРµРЅРёРµ Р·Р°РїСЂРѕСЃР° Рё РїРѕР»СѓС‡РµРЅРёРµ РѕС‚РІРµС‚Р°
         $output = curl_exec($ch);
 
         var_dump($output);
-        // 4. очистка ресурсов
+        // 4. РѕС‡РёСЃС‚РєР° СЂРµСЃСѓСЂСЃРѕРІ
         curl_close($ch);
     } catch (Exception $e) {
         var_dump($e);
