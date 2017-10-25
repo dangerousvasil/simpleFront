@@ -28,7 +28,7 @@ if ($_GET['info'] ?? false) {
         // 4. очистка ресурсов
         curl_close($ch);
 
-        // Впариант с бибилиотекой  fguillot/json-rpc
+        // Вариант с бибилиотекой  fguillot/json-rpc
         // $client = new Client('http://' . $serviceHost);
         // $http = $client->getHttpClient()
         //                ->withDebug()
