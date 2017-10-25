@@ -27,6 +27,13 @@ if ($_GET['info'] ?? false) {
         var_dump($output);
         // 4. очистка ресурсов
         curl_close($ch);
+
+        // Впариант с бибилиотекой  fguillot/json-rpc
+        // $client = new Client('http://' . $serviceHost);
+        // $http = $client->getHttpClient()
+        //                ->withDebug()
+        //                ->withHeaders(['Host: service']);
+
     } catch (Exception $e) {
         var_dump($e);
     }
